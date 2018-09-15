@@ -1,6 +1,7 @@
 <?php
 get_header();
 ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div class="main-content">
 	<div class="content-wrapper">
 		<div class="content">
@@ -18,7 +19,9 @@ get_header();
 		</div>
 	</div>
 </div>
+<?php endwhile; else : ?>
+	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
 <?php
 get_footer();
 ?>
-

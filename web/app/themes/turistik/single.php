@@ -1,20 +1,23 @@
 <?php
 get_header();
 ?>
-
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<?php $image =get_field('image', false);
+	$source = ($image['url'])?>;
 <div class="main-content">
 	<div class="content-wrapper">
 		<div class="content">
 			<div class="article-title title-page">
 				<h4><?php the_title(); ?></h4>
 			</div>
-			<div class="article-image"><img src="img/post-image.jpg" alt="Image поста"></div>
+			<div class="article-image"><img src="<?php echo $source;?>" alt="Image поста"></div>
 			<div class="article-info">
 				<div class="post-date"></div>
 			</div>
 			<div class="article-text">
 				<p>
-					<?php the_content(); ?>
+					<?php the_excerpt(); ?>
+
 				</p>
 			</div>
 			<div class="article-pagination">
@@ -40,7 +43,9 @@ get_header();
 		</div>
 	</div>
 </div>
-
+<?php endwhile; else : ?>
+	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
 <?php
 get_footer();
 ?>
