@@ -1,23 +1,21 @@
+<?php get_header(); ?>
 <?php
-get_header();
-?>
-<div class="main-content">
-    <div class="content-wrapper">
-        <div class="content">
-            <h1 class="title-page">Последние новости и акции из мира туризма</h1>
-            <div class="posts-list">
+$s=get_search_query();
+$args = array(
+	's' =>$s
+);
+// The Query
 
-	            <?php
-	            $args = [
-		            'post_type' => ['shares', 'post'],
-		            'posts_per_page' => 10
-	            ];
-
-	            $posts = query_posts($args);
-	            ?>
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					<?php $image = get_field( 'imageprewiev', false );
-					$source = ( $image['url'] ); ?>
+$the_query = new WP_Query( $args );
+if ( $the_query->have_posts() ) {
+	_e("<h2 style='font-weight:bold;color:#000'>Результаты поиска: ".get_query_var('s')."</h2>");
+	while ( $the_query->have_posts() ) {
+		$the_query->the_post();?>
+         <div class="main-content">
+            <div class="content-wrapper">
+                <div class="content">
+	                <?php $image = get_field( 'imageprewiev', false );
+	                $source = ( $image['url'] ); ?>
                     <div class="post-wrap">
                         <div class="post-thumbnail"><img src="<?php echo $source; ?>"  alt="Image поста"
                                                          class="post-thumbnail__image"></div>
@@ -27,10 +25,10 @@ get_header();
                             </div>
                             <div class="post-content__post-text">
                                 <div class="post-title">
-									<?php the_title(); ?>
+					                <?php the_title(); ?>
                                 </div>
                                 <p>
-									<?php the_excerpt(); ?>
+					                <?php the_excerpt(); ?>
                                 </p>
                             </div>
                             <div class="post-content__post-control"><a href="<?php the_permalink(); ?>"
@@ -38,13 +36,19 @@ get_header();
                         </div>
                     </div>
                     <!-- post-mini_end-->
-				<?php endwhile; else : ?>
-                    <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-				<?php endif; ?>
+                </div>
             </div>
-        </div>
+            </div>
+        <li>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        </li>
+		<?php
+	}
+}else{
+	?>
+    <h2 style='font-weight:bold;color:#000'>Nothing Found</h2>
+    <div class="alert alert-info">
+        <p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>
     </div>
-</div>
-<?php
-get_footer();
-?>
+<?php } ?>
+<?php get_footer(); ?>

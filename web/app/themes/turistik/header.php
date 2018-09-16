@@ -32,10 +32,12 @@
 		</div>
 		<div class="bottom-header">
 			<div class="search-form-wrap">
-				<form class="search-form">
-					<input type="text" placeholder="Поиск..." class="search-form__input">
-					<button class="search-form__btn-search"><i class="icon icon-search"></i></button>
-				</form>
+                <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+
+                        <input type="search" placeholder="Поиск..." value="<?php echo get_search_query() ?>" name="s" class="search-form__input">
+                       	<button class="search-form__btn-search"><i class="icon icon-search"></i></button>
+
+                </form>
 			</div>
 		</div>
 	</header>

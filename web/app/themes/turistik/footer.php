@@ -12,7 +12,7 @@
 			</ul>
 		</div>
 		<div class="copyright-wrap">
-			<div class="copyright-text">Туристик<a href="#" class="copyright-text__link"> loftschool 2018</a></div>
+			<div class="copyright-text">Туристик<a href="https://vk.com/id192972829" class="copyright-text__link"> by Red-eyed developer 2018</a></div>
 		</div>
 	</div>
 </footer>
