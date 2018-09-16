@@ -6,8 +6,8 @@
 		<div class="bottom-menu">
 			<ul class="b-menu__list">
 				<li class="b-menu__list__item"><a href="http://tourist.wp/" class="b-menu__list__item__link">Главная</a></li>
-				<li class="b-menu__list__item"><a href="#" class="b-menu__list__item__link">Полезная информация</a></li>
-				<li class="b-menu__list__item"><a href="#" class="b-menu__list__item__link">Последние акции</a></li>
+				<li class="b-menu__list__item"><a href="http://tourist.wp/poleznaya-informatsiya/" class="b-menu__list__item__link">Полезная информация</a></li>
+				<li class="b-menu__list__item"><a href="http://tourist.wp/aktualnyie-aktsii/" class="b-menu__list__item__link">Последние акции</a></li>
 				<li class="b-menu__list__item"><a href="http://tourist.wp/privacy-policy/" class="b-menu__list__item__link">О сервисе</a></li>
 			</ul>
 		</div>

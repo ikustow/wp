@@ -22,8 +22,8 @@
 				<nav class="main-navigation">
 					<ul class="nav-list">
 						<li class="nav-list__nav-item"><a href="http://tourist.wp/" class="nav-list__nav-item__nav-link">Главная</a></li>
-						<li class="nav-list__nav-item"><a href="#" class="nav-list__nav-item__nav-link">Полезная информация</a></li>
-						<li class="nav-list__nav-item"><a href="http://tourist.wp/shares/" class="nav-list__nav-item__nav-link">Последние акции</a></li>
+						<li class="nav-list__nav-item"><a href="http://tourist.wp/poleznaya-informatsiya/" class="nav-list__nav-item__nav-link">Полезная информация</a></li>
+						<li class="nav-list__nav-item"><a href="http://tourist.wp/aktualnyie-aktsii/" class="nav-list__nav-item__nav-link">Последние акции</a></li>
 						<li class="nav-list__nav-item"><a href="http://tourist.wp/privacy-policy/" class="nav-list__nav-item__nav-link">О сервисе</a></li>
 						<li class="nav-list__nav-item"><a href="http://tourist.wp/news/" class="nav-list__nav-item__nav-link">Новости</a></li>
 					</ul>
