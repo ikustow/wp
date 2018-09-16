@@ -51,6 +51,9 @@ $posts = query_posts($args);
                     </p>
                 </div>
             </div>
+            <div class="sidebar">
+		        <?php get_sidebar();?>
+            </div>
         </div>
     </div>
 	<?php endif; ?>

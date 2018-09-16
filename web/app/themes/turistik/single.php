@@ -95,12 +95,14 @@ get_header();
 					?>
                 </div>
             </div>
+            <div class="sidebar">
+		        <?php get_sidebar();?>
+            </div>
         </div>
     </div>
 <?php endwhile; else : ?>
     <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
 <?php
-get_sidebar();
 get_footer();
 ?>

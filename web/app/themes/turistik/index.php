@@ -6,7 +6,7 @@ get_header();
         <div class="content">
             <h1 class="title-page">Последние новости и акции из мира туризма</h1>
              <div class="posts-list">
-	             <?php get_sidebar();?>
+
 	            <?php
 	            $args = [
 		            'post_type' => ['shares', 'post'],
@@ -43,7 +43,9 @@ get_header();
 				<?php endif; ?>
             </div>
         </div>
+        <div class="sidebar">
+		    <?php get_sidebar();?>
+        </div>
     </div>
-
 </div>
 <?php get_footer();?>

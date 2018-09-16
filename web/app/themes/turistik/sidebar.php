@@ -1,7 +1,7 @@
 <?php
 ?>
 <?php if ( is_active_sidebar('tag') ): ?>
-<?php dynamic_sidebar('tag');?>
+<!--//--><?php //dynamic_sidebar('tag');?>
 	<div id="tag" class="tag-list">
         <div class="sidebar">
             <div class="sidebar__sidebar-item">
@@ -22,7 +22,7 @@
 <?php if ( is_active_sidebar('category') ): ?>
     <div id="category" class="category-list">
 
-	    <?php dynamic_sidebar('category');?>
+<!--	    --><?php //dynamic_sidebar('category');?>
         <div class="sidebar__sidebar-item">
             <div class="sidebar-item__title">Категории</div>
             <div class="sidebar-item__content">
