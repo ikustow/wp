@@ -18,6 +18,9 @@ get_header();
 				</p>
 			</div>
 		</div>
+        <div class="sidebar">
+			<?php get_sidebar();?>
+        </div>
 	</div>
 </div>
 <?php endwhile; else : ?>
