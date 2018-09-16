@@ -8,7 +8,7 @@ $args = array(
 
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
-	_e("<h2 style='font-weight:bold;color:#000'>Результаты поиска: ".get_query_var('s')."</h2>");
+	_e("<h2 class='article-info'>Результаты поиска: ".get_query_var('s')."</h2>");
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();?>
          <div class="main-content">

@@ -5,8 +5,8 @@ get_header();
     <div class="content-wrapper">
         <div class="content">
             <h1 class="title-page">Последние новости и акции из мира туризма</h1>
-            <div class="posts-list">
-
+             <div class="posts-list">
+	             <?php get_sidebar();?>
 	            <?php
 	            $args = [
 		            'post_type' => ['shares', 'post'],
@@ -44,7 +44,6 @@ get_header();
             </div>
         </div>
     </div>
+
 </div>
-<?php
-get_footer();
-?>
+<?php get_footer();?>

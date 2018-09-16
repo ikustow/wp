@@ -101,5 +101,6 @@ get_header();
     <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
 <?php
+get_sidebar();
 get_footer();
 ?>
