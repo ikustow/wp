@@ -8,8 +8,10 @@ get_header();
             <div class="posts-list">
                 <!-- post-mini-->
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<?php $image = get_field( 'imageprewiev', false );
+					$source = ( $image['url'] ); ?>
                     <div class="post-wrap">
-                        <div class="post-thumbnail"><img src="img/post_thumb/thumb_1.jpg" alt="Image поста"
+                        <div class="post-thumbnail"><img src="<?php echo $source; ?>"  alt="Image поста"
                                                          class="post-thumbnail__image"></div>
                         <div class="post-content">
                             <div class="post-content__post-info">
@@ -27,8 +29,6 @@ get_header();
                                                                        class="btn-read-post">Читать далее >></a></div>
                         </div>
                     </div>
-
-
                     <!-- post-mini_end-->
 				<?php endwhile; else : ?>
                     <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
