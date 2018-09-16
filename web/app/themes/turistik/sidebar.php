@@ -2,8 +2,7 @@
 ?>
 <?php if ( is_active_sidebar('tag') ): ?>
 <!--//--><?php //dynamic_sidebar('tag');?>
-	<div id="tag" class="tag-list">
-        <div class="sidebar">
+
             <div class="sidebar__sidebar-item">
                 <div class="sidebar-item__title">Теги</div>
                 <div class="sidebar-item__content">
@@ -15,12 +14,11 @@
                     </ul>
                 </div>
             </div>
-	</div>
 
 <?php endif; ?>
 
 <?php if ( is_active_sidebar('category') ): ?>
-    <div id="category" class="category-list">
+
 
 <!--	    --><?php //dynamic_sidebar('category');?>
         <div class="sidebar__sidebar-item">
@@ -34,15 +32,14 @@
                 </ul>
             </div>
         </div>
-    </div>
+
 
 <?php endif; ?>
 
 <?php if ( is_active_sidebar('calendar') ): ?>
-    <div id="calendar" class="calendar-list">
+
 
 		<?php dynamic_sidebar('calendar');?>
 
-    </div>
 
 <?php endif; ?>
