@@ -7,6 +7,14 @@ get_header();
             <h1 class="title-page">Последние новости и акции из мира туризма</h1>
             <div class="posts-list">
                 <!-- post-mini-->
+	            <?php
+	            $args = [
+		            'post_type' => ['shares', 'post'],
+		            'posts_per_page' => 10
+	            ];
+	          
+	            $posts = query_posts($args);
+	            ?>
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<?php $image = get_field( 'imageprewiev', false );
 					$source = ( $image['url'] ); ?>

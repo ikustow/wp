@@ -17,19 +17,26 @@ get_header();
                 </div>
                 <div class="article-text">
                     <p>
-						<?php the_content(); ?>
+			            <?php the_content(); ?>
                     </p>
                 </div>
                 <div class="article-pagination">
-					<?php $prev_post = get_previous_post(); ?>
-					<?php if ( ! empty( $prev_post ) ) {
-						$prewiev = get_field('imageprewiev', $prev_post);
-						$imageprewiev = $prewiev['url']?>
-					     <div class="article-pagination__block pagination-prev-left"><a
-                                    href="<?php echo get_permalink( $prev_post ); ?>" class="article-pagination__link">Предыдущая
-                                статья<i class="icon icon-angle-double-left"></i></a>
+		            <?php $prev_post = get_previous_post(); ?>
+		            <?php if ( ! empty( $prev_post ) ) {
+			            $prewiev      = get_field( 'imageprewiev', $prev_post );
+			            $imageprewiev = $prewiev['url'];
+			            if ( $post->post_type == 'shares' ) {
+				            $prevtContentLabel = "Предыдущая акция";
+			            } else {
+				            $prevtContentLabel = "Предыдущая статья";
+			            } ?>
+                        <div class="article-pagination__block pagination-prev-left"><a
+                                    href="<?php echo get_permalink( $prev_post ); ?>"
+                                    class="article-pagination__link"><?php echo $prevtContentLabel; ?><i
+                                        class="icon icon-angle-double-left"></i></a>
                             <div class="wrap-pagination-preview pagination-prev-left">
-                                <div class="preview-article__img"><img src="<?php echo $imageprewiev; ?>" class="preview-article__image">
+                                <div class="preview-article__img"><img src="<?php echo $imageprewiev; ?>"
+                                                                       class="preview-article__image">
                                 </div>
                                 <div class="preview-article__content">
                                     <div class="preview-article__info"><a
@@ -39,9 +46,9 @@ get_header();
                                 </div>
                             </div>
                         </div>
-						<?php
-					}else { ?>
-                        <div class="article-pagination__block pagination-prev-left" >Спасибо, что выбрали наш блог!<i
+			            <?php
+		            } else { ?>
+                        <div class="article-pagination__block pagination-prev-left">Спасибо, что выбрали наш блог!<i
                             ></i>
                             <div class="wrap-pagination-preview pagination-prev-left">
                             </div>
@@ -49,15 +56,23 @@ get_header();
 						<?php
 					}
 					?>
-					<?php $next_post = get_next_post(); ?>
-					<?php if ( ! empty( $next_post ) ) {
-					 $prewiev = get_field('imageprewiev', $next_post);
-						$imageprewiev = $prewiev['url']?>
-					                       <div class="article-pagination__block pagination-prev-right"><a
-                                    href="<?php echo get_permalink( $next_post ); ?>" class="article-pagination__link">Следующая
-                                статья<i class="icon icon-angle-double-right"></i></a>
+	                <?php $next_post = get_next_post(); ?>
+	                <?php if ( ! empty( $next_post ) ) {
+		                $prewiev      = get_field( 'imageprewiev', $next_post );
+		                $imageprewiev = $prewiev['url'];
+		                if ( $post->post_type == 'shares' ) {
+			                $nextContentLabel = "Следующая акция";
+		                } else {
+			                $nextContentLabel = "Следующая статья";
+		                }
+		                ?>
+                        <div class="article-pagination__block pagination-prev-right"><a
+                                    href="<?php echo get_permalink( $next_post ); ?>"
+                                    class="article-pagination__link"><?php echo $nextContentLabel; ?>
+                                <i class="icon icon-angle-double-right"></i></a>
                             <div class="wrap-pagination-preview pagination-prev-right">
-                                <div class="preview-article__img"><img src="<?php echo $imageprewiev; ?>" class="preview-article__image">
+                                <div class="preview-article__img"><img src="<?php echo $imageprewiev; ?>"
+                                                                       class="preview-article__image">
                                 </div>
                                 <div class="preview-article__content">
                                     <div class="preview-article__info"><a
@@ -67,10 +82,11 @@ get_header();
                                 </div>
                             </div>
                         </div>
-						<?php
-					} else { ?>
-                        <div class="article-pagination__block pagination-prev-right" >Новые статьи будут уже скоро!<i
-                                    ></i>
+		                <?php
+	                } else { ?>
+                        <div class="article-pagination__block pagination-prev-right">Новые статьи и акции будут уже
+                            скоро!<i
+                            ></i>
                             <div class="wrap-pagination-preview pagination-prev-right">
                             </div>
                         </div>
